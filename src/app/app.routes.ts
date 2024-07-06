@@ -1,0 +1,21 @@
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { LoginComponent } from './login/login.component';
+import { ContratosComponent } from './contratos/contratos.component';
+
+export const routes: Routes = [
+    { path: '', redirectTo: '/painel', pathMatch: 'full' },
+    { path: 'painel', component: DashboardComponent },
+    { path: 'cadastro', component: CadastroComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'contratos', component: ContratosComponent }
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes), CommonModule],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
