@@ -28,8 +28,6 @@
               "src/styles.css",
               "src/assets/css/nucleo-icons.css",
               "src/assets/css/nucleo-svg.css",
-              "src/assets/css/soft-ui-dashboard.css",
-              "src/assets/css/soft-ui-dashboard.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
