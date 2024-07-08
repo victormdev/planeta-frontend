@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { ContratosComponent } from './contratos/contratos.component';
 import { RegisterComponent } from './register/register.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/painel', pathMatch: 'full' },
@@ -13,7 +14,8 @@ export const routes: Routes = [
     { path: 'cadastro', component: CadastroComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contratos', component: ContratosComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'register', component: RegisterComponent },
+    { path: 'agenda', component: AgendaComponent }
 ];
 
 @NgModule({

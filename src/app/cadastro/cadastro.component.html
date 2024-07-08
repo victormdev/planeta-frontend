@@ -40,7 +40,7 @@
           </div><span class="nav-link-text ms-1">Cadastro</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/agenda.html">
+          <a class="nav-link" routerLink="/agenda">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewbox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>credit-card</title>
@@ -57,7 +57,7 @@
           </div><span class="nav-link-text ms-1">Agenda</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/tables.html">
+          <a class="nav-link" routerLink="/contratos">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewbox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>office</title>
@@ -573,16 +573,22 @@
               <div class="card mb-2">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-12 col-md-6">
-                              <h6>Cadastro dos Canais de divulga&ccedil;&atilde;o</h6>
-                              <form id="channelform">
-                                  <ul class="channel-list" id="channellist">
-                                      <!-- Canais adicionados aparecer&atilde;o aqui -->
-                                  </ul>
-                                  <a class="btn bg-gradient-dark" onclick="addChannel()">adicionar Canal</a>
-                                  <a class="btn bg-gradient-dark">salvar</a>
-                              </form>
-                          </div>
+                        <div class="col-12 col-md-6">
+                            <h6>Cadastro dos Canais de divulgação</h6>
+                            <form id="channelform">
+                                <ul class="channel-list" id="channellist">
+                                    <li class="channel-item" *ngFor="let channel of channels; let i = index">
+                                        <select [(ngModel)]="channel.type" name="channelType{{i}}">
+                                            <option *ngFor="let type of channelTypes" [value]="type">{{type}}</option>
+                                        </select>
+                                        <input type="text" [(ngModel)]="channel.url" name="channelUrl{{i}}" placeholder="Digite a URL aqui">
+                                        <button class="btn bg-gradient-primary px-3 mb-2 active remove-channel" (click)="removeChannel(i)">X</button>
+                                    </li>
+                                </ul>
+                                <a class="btn bg-gradient-dark" (click)="addChannel()">adicionar Canal</a>
+                                <a class="btn bg-gradient-dark" (click)="submitChannels()">salvar</a>
+                            </form>
+                        </div>
                       </div>
 
                   </div>
