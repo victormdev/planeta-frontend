@@ -203,12 +203,12 @@
                   <ul class="nav nav-pills nav-fill p-2 bg-transparent" role="tablist">
                       <li class="nav-item" (click)="selecttab(1)" [class.active]="isSelected(1)">
                           <a class="nav-link mb-0 px-0 py-1" [class.active]="isSelected(1)" role="tab" aria-selected="true">
-                               <span class="ms-1">pessoa Jurídica</span><!-- <img src="/assets/img/check.png"> -->
+                               <span class="ms-1">Pessoa Jurídica</span><!-- <img src="/assets/img/check.png"> -->
                           </a>
                       </li>
                       <li class="nav-item" (click)="selecttab(2)" [class.active]="isSelected(2)">
                           <a class="nav-link mb-0 px-0 py-1" [class.active]="isSelected(2)" role="tab" aria-selected="false">
-                              <span class="ms-1">pessoa Física<!-- <img src="/assets/img/check.png">-->
+                              <span class="ms-1">Pessoa Física<!-- <img src="/assets/img/check.png">-->
                               </span></a>
                       </li>
                       <li class="nav-item" (click)="selecttab(3)" [class.active]="isSelected(3)">
@@ -225,7 +225,7 @@
               </div>
           </div>
           <div class="col-lg-6 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-5"></div>
-          <!-- pessoa Jur&iacute;dica -->
+          <!-- Pessoa Jurídica -->
           <div class="col-12 tab-content" [class.active]="isSelected(1)">
               <div class="card mb-2">
                   <div class="card-body">
@@ -235,24 +235,24 @@
                           </div>
                           <div class="col-12 col-md-6">
                               <form>
-                                  <label>pessoa Jur&iacute;dica *</label>
+                                  <label>Pessoa Jurídica *</label>
                                   <div class="mb-3">
-                                      <input type="text" id="juridicopessoajuridica" class="form-control" placeholder="Digite a pessoa jur&iacute;dica" required>
+                                      <input type="text" id="juridicopessoajuridica" class="form-control" placeholder="Digite a Pessoa Jurídica" required>
                                   </div>
-                                  <label>CNpJ *</label>
+                                  <label>CNPJ *</label>
                                   <div class="mb-3">
-                                      <input type="text" id="juridicocnpj" class="form-control" oninput="formatarCNpJ(this)" maxlength="18" placeholder="Digite o CNpJ" aria-label="password" aria-describedby="password-addon" required>
+                                      <input type="text" id="juridicocnpj" class="form-control" oninput="formatarCNpJ(this)" maxlength="18" placeholder="Digite o CNPJ" aria-label="password" aria-describedby="password-addon" required>
                                   </div>
                               </form>
                           </div>
                           <div class="col-12 col-md-6 mb-3">
-                              <label>Raz&atilde;o social *</label>
+                              <label>Razão Social *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicorazao" class="form-control" placeholder="Digite a raz&atilde;o social" aria-label="email" aria-describedby="email-addon" required>
+                                  <input type="text" id="juridicorazao" class="form-control" placeholder="Digite a Razão Social" aria-label="email" aria-describedby="email-addon" required>
                               </div>
-                              <label>inscri&ccedil;&atilde;o Municipal *</label>
+                              <label>Inscrição Municipal *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicoinscricao" class="form-control" placeholder="Digite a sua inscri&ccedil;&atilde;o municipal" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" id="juridicoinscricao" class="form-control" placeholder="Digite a sua Inscrição Municipal" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-4"></div>
@@ -274,9 +274,9 @@
                           </div>
 
                           <div class="col-12 col-md-3">
-                              <label>CpF *</label>
+                              <label>CPF *</label>
                               <div class="mb-3">
-                                  <input id="juridicocpf" type="text" maxlength="14" class="form-control" placeholder="CpF do representante" oninput="formatarCpF(this)" ui-mask="999.999.999-99" aria-label="password" aria-describedby="password-addon" required>
+                                  <input id="juridicocpf" type="text" maxlength="14" class="form-control" placeholder="CPF do representante" oninput="formatarCPF(this)" ui-mask="999.999.999-99" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
@@ -299,15 +299,15 @@
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
-                              <label>pa&iacute;s *</label>
+                              <label>País *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicopais" class="form-control" placeholder="pais do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" id="juridicopais" class="form-control" placeholder="País do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
-                              <label>CEp *</label>
+                              <label>CEP *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" id="juridicocep" placeholder="CEp do representante" oninput="formatarCEp(this)" maxlength="10" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" class="form-control" id="juridicocep" placeholder="CEP do representante" oninput="formatarCEp(this)" maxlength="10" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
@@ -337,7 +337,7 @@
 
                           <div class="col-4 mt-5"></div>
                           <div class="col-12 col-md-3 pb-0" style="text-align: center;">
-                              <h6>principais Redes sociais</h6>
+                              <h6>Principais Redes Sociais</h6>
                           </div>
                           <div class="col-4 mb-5"></div>
 
@@ -392,10 +392,10 @@
                                       <select class="form-control">
                                           <option value="" selected></option>
                                           <option value="">Casado(a)</option>
-                                          <option value="">Vi&uacute;vo(a)</option>
-                                          <option value="">uni&atilde;o Est&aacute;vel</option>
-                                          <option value="">divorciado(a)</option>
-                                          <option value="">solteiro(a)</option>
+                                          <option value="">Viúvo(a)</option>
+                                          <option value="">União Estável</option>
+                                          <option value="">Divorciado(a)</option>
+                                          <option value="">Solteiro(a)</option>
                                       </select>
                                   </div>
                               </form>
@@ -405,15 +405,15 @@
                               <div class="mb-3">
                                   <input type="text" maxlength="13" oninput="formatarRG(this)" class="form-control" placeholder="Digite o RG" aria-label="email" aria-describedby="email-addon" required>
                               </div>
-                              <label>data de Nascimento *</label>
+                              <label>Data de Nascimento *</label>
                               <div class="mb-3">
                                   <input type="date" class="form-control" placeholder="" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4 mb-3">
-                              <label>CpF *</label>
+                              <label>CPF *</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="14" class="form-control" oninput="formatarCpF(this)" placeholder="Digite o CpF" aria-label="email" aria-describedby="email-addon" required>
+                                  <input type="text" maxlength="14" class="form-control" oninput="formatarCpF(this)" placeholder="Digite o CPF" aria-label="email" aria-describedby="email-addon" required>
                               </div>
                           </div>
 
@@ -436,33 +436,33 @@
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
-                              <label>pa&iacute;s *</label>
+                              <label>País *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite o pa&iacute;s" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" class="form-control" placeholder="Digite o país" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
-                              <label>CEp *</label>
+                              <label>CEP *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatarCEp(this)" maxlength="10" class="form-control" placeholder="Digite o CEp" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" oninput="formatarCEp(this)" maxlength="10" class="form-control" placeholder="Digite o CEP" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 1 *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 2 *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Telefone *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-6">
@@ -527,34 +527,34 @@
                           <div class="col-12 col-md-3">
                               <label for="contratosocial">Contrato social</label>
                               <label class="picture" tabindex="0">
-                                  <span class="picture__image" id="contratosocialpreview">Fa&ccedil;a o upload aqui</span>
+                                  <span class="picture__image" id="contratosocialpreview">Faça o upload aqui</span>
                                   <input type="file" name="picture__input" id="contratosocial" class="picture__input" onchange="previewFile('contratosocial', 'contratosocialpreview', 'removeContratosocial')">
                               </label>
                               <button class="btn bg-gradient-warning w-100 mb-0" type="button" id="removeContratosocial" style="display:none;" onclick="removeFile('contratosocial', 'contratosocialpreview', 'removeContratosocial')">Remover</button>
                           </div>
 
                           <div class="col-12 col-md-3">
-                              <label for="cnpj">CNpJ</label>
+                              <label for="cnpj">CNPJ</label>
                               <label class="picture" tabindex="0">
-                                  <span class="picture__image" id="cnpjpreview">Fa&ccedil;a o upload aqui</span>
+                                  <span class="picture__image" id="cnpjpreview">Faça o upload aqui</span>
                                   <input type="file" name="picture__input" id="cnpj" class="picture__input" onchange="previewFile('cnpj', 'cnpjpreview', 'removeCnpj')">
                               </label>
                               <button class="btn bg-gradient-warning w-100 mb-0" type="button" id="removeCnpj" style="display:none;" onclick="removeFile('cnpj', 'cnpjpreview', 'removeCnpj')">Remover</button>
                           </div>
 
                           <div class="col-12 col-md-3">
-                              <label for="rgCpfCnh">RG, CpF ou CNH</label>
+                              <label for="rgCpfCnh">RG, CPF ou CNH</label>
                               <label class="picture" tabindex="0">
-                                  <span class="picture__image" id="rgCpfCnhpreview">Fa&ccedil;a o upload aqui</span>
+                                  <span class="picture__image" id="rgCpfCnhpreview">Faça o upload aqui</span>
                                   <input type="file" name="picture__input" id="rgCpfCnh" class="picture__input" onchange="previewFile('rgCpfCnh', 'rgCpfCnhpreview', 'removeRgCpfCnh')">
                               </label>
                               <button class="btn bg-gradient-warning w-100 mb-0" type="button" id="removeRgCpfCnh" style="display:none;" onclick="removeFile('rgCpfCnh', 'rgCpfCnhpreview', 'removeRgCpfCnh')">Remover</button>
                           </div>
 
                           <div class="col-12 col-md-3">
-                              <label for="comprovanteResidencia">Comprovante de resid&ecirc;ncia</label>
+                              <label for="comprovanteResidencia">Comprovante de residência</label>
                               <label class="picture" tabindex="0">
-                                  <span class="picture__image" id="comprovanteResidenciapreview">Fa&ccedil;a o upload aqui</span>
+                                  <span class="picture__image" id="comprovanteResidenciapreview">Faça o upload aqui</span>
                                   <input type="file" name="picture__input" id="comprovanteResidencia" class="picture__input" onchange="previewFile('comprovanteResidencia', 'comprovanteResidenciapreview', 'removeComprovanteResidencia')">
                               </label>
                               <button class="btn bg-gradient-warning w-100 mb-0" type="button" id="removeComprovanteResidencia" style="display:none;" onclick="removeFile('comprovanteResidencia', 'comprovanteResidenciapreview', 'removeComprovanteResidencia')">Remover</button>
@@ -585,7 +585,7 @@
                                         <button class="btn bg-gradient-primary px-3 mb-2 active remove-channel" (click)="removeChannel(i)">X</button>
                                     </li>
                                 </ul>
-                                <a class="btn bg-gradient-dark" (click)="addChannel()">adicionar Canal</a>
+                                <a class="btn bg-gradient-dark" (click)="addChannel()">Adicionar Canal</a>
                                 <a class="btn bg-gradient-dark" (click)="submitChannels()">salvar</a>
                             </form>
                         </div>

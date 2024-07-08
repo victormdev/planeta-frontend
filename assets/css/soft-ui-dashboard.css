@@ -3434,19 +3434,19 @@
   }
   
   .form-control {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.4rem;
-    color: #fff;
-    background-color: #121212;
-    background-clip: padding-box;
-    border: 1px solid #d31d2027;
-    appearance: none;
-    border-radius: 0.5rem;
-    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4rem !important;
+    color: #fff !important;
+    background-color: #121212 !important;
+    background-clip: padding-box !important;
+    border: 1px solid #d31d2027 !important;
+    appearance: none !important;
+    border-radius: 0.5rem !important;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -3466,9 +3466,9 @@
   .form-control:focus {
     color: #fff;
     background-color: #121212;
-    border-color: #d31d1f;
+    border-color: #d31d1f !important;
     outline: 0;
-    box-shadow: 0 0 0 2px #d31d1f;
+    box-shadow: 0 0 0 2px #d31d1f !important;
   }
   
   .form-control::-webkit-date-and-time-value {
@@ -21286,8 +21286,8 @@
   
   .btn-info:hover,
   .btn.bg-gradient-info:hover {
-    background-color: #17c1e8;
-    border-color: #17c1e8;
+    background-color: #17c1e8 !important;
+    border-color: #17c1e8 !important;
   }
   
   .btn-info .btn.bg-outline-info,
@@ -22459,7 +22459,7 @@
   }
   
   .bg-gradient-info {
-    background-image: linear-gradient(310deg, #791a25 0%, #d31d1f 100%);
+    background-image: linear-gradient(310deg, #791a25 0%, #d31d1f 100%) !important;
   }
   
   .bg-gradient-warning {
@@ -24037,7 +24037,7 @@
   }
   
   .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
-    background-image: linear-gradient(310deg, #791a25 0%, #791a25 100%);
+    background-image: linear-gradient(310deg, #791a25 0%, #791a25 100%) !important;
   }
   
   .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon svg .color-background,
