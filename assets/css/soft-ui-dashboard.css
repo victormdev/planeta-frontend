@@ -21639,6 +21639,8 @@
   .card .card-body {
     font-family: "Open Sans";
     padding: 1.5rem;
+    background-color: #121212 !important;
+    border: #121212 1px solid !important;
   }
   
   .card.card-plain {
