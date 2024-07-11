@@ -139,5 +139,17 @@
     }
   },
   "active": "266a134329d2db3c",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "node_modules/@esbuild/linux-loong64",
+    "node_modules/@esbuild/linux-ia32",
+    "node_modules/@esbuild/linux-arm64",
+    "node_modules/@esbuild/linux-arm",
+    "node_modules/@esbuild/freebsd-x64",
+    "node_modules/@esbuild/freebsd-arm64",
+    "node_modules/@esbuild/darwin-x64",
+    "node_modules/@esbuild/darwin-arm64",
+    "node_modules/@esbuild/android-arm64",
+    "node_modules/@esbuild/android-x64",
+    "node_modules/@esbuild/android-arm"
+  ]
 }

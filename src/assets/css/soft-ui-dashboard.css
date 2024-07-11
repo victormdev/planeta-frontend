@@ -5929,10 +5929,10 @@
     min-width: 0;
     height: var(--bs-card-height);
     word-wrap: break-word;
-    /* background-color: var(--bs-card-bg); */
+    background-color: #121212;
     background-clip: border-box;
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-    border-radius: 30px !important;
+    border-radius: var(--bs-card-border-radius);
   }
   
   .card>hr {
@@ -21627,7 +21627,7 @@
   }
   
   .card {
-    border-radius: 30px !important;
+    border-radius: 15px !important;
   }
   
   .card .card-header {
@@ -21637,8 +21637,6 @@
   .card .card-body {
     font-family: "Open Sans";
     padding: 1.5rem;
-    background-color: #121212 !important;
-    border: #121212 1px solid !important;
   }
   
   .card.card-plain {
