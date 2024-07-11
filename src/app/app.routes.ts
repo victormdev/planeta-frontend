@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ContratosComponent } from './contratos/contratos.component';
 import { RegisterComponent } from './register/register.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/painel', pathMatch: 'full' },
@@ -19,7 +20,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes), CommonModule],
+    imports: [RouterModule.forRoot(routes), CommonModule, HttpClientModule],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
