@@ -10,7 +10,7 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/painel', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'painel', component: DashboardComponent },
     { path: 'cadastro', component: CadastroComponent },
     { path: 'login', component: LoginComponent },

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
 })
 export class RegisterComponent {
   signupForm!: FormGroup;
-  constructor(){}
+  constructor(private authService: AuthService){}
   ngOnInit(): void {
     this.signupForm = this.createFormGroup();
   }
@@ -25,6 +26,6 @@ export class RegisterComponent {
   }
 
   signup(): void {
-    console.log(this.signupForm.value);
+    this.authService.signup(this.signupForm.value).subscribe((msg) => console.log(msg))
   }
 }
