@@ -52,7 +52,7 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <div class="alert alert-danger" role="alert" id="alertaErroLogin">
+                  <div class="alert alert-danger" role="alert" *ngIf="loginError">
                     <strong>Credenciais inválidas!</strong> Por favor, tente novamente.
                 </div>
               <img src="/assets/img/planeta.png">

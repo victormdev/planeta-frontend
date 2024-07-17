@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-svg.css']
 })
 export class LoginComponent {
-
+  errorMessage: string | null = null;
   loginForm!: FormGroup;
 
   constructor(private authService: AuthService){}

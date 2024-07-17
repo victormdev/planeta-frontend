@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "http://localhost:3000/auth";
+  private url = "https://planeta-api-nodejs.onrender.com/auth";
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId!: Pick<User, "id">;
@@ -34,7 +34,7 @@ export class AuthService {
         this.userId = tokenObject.userId;
         localStorage.setItem("token", tokenObject.token);
         this.isUserLoggedIn$.next(true);
-        this.router.navigate(["painel"]);
+        this.router.navigate(["/painel"]);
       }),
       catchError(this.errorHandlerService.handleError<{token: string, userId: Pick<User, "id">}>("login"))
     );
