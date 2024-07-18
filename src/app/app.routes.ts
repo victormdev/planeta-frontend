@@ -8,15 +8,16 @@ import { ContratosComponent } from './contratos/contratos.component';
 import { RegisterComponent } from './register/register.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { HttpClientModule } from '@angular/common/http';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'painel', component: DashboardComponent },
-    { path: 'cadastro', component: CadastroComponent },
+    { path: 'painel', component: DashboardComponent, canActivate: [authGuard] },
+    { path: 'cadastro', component: CadastroComponent, canActivate: [authGuard]  },
     { path: 'login', component: LoginComponent },
-    { path: 'contratos', component: ContratosComponent },
+    { path: 'contratos', component: ContratosComponent, canActivate: [authGuard]  },
     { path: 'register', component: RegisterComponent },
-    { path: 'agenda', component: AgendaComponent }
+    { path: 'agenda', component: AgendaComponent, canActivate: [authGuard]  }
 ];
 
 @NgModule({

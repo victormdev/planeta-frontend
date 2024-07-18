@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+var LocalStorage = require('node-localstorage').LocalStorage,
+localStorage = new LocalStorage('./scratch');
 
 @Injectable({
   providedIn: 'root',
