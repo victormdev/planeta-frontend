@@ -7,12 +7,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, RouterLinkActive, ReactiveFormsModule],
+  imports: [RouterLink, RouterOutlet, RouterLinkActive, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-svg.css']
 })
 export class LoginComponent {
   errorMessage: string | null = null;
+  invalidCredentials = false;
   loginForm!: FormGroup;
 
   constructor(private authService: AuthService){}
@@ -29,6 +30,15 @@ export class LoginComponent {
   }
 
   login(): void {
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe();
-  }
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
+        () => {},
+        (error) => {
+            console.log(error);
+            this.invalidCredentials = true;
+            setTimeout(() => {
+                this.invalidCredentials = false;
+            }, 5000);
+        }
+    );
+}
 }
