@@ -42,5 +42,13 @@ export class AuthService {
       catchError(this.errorHandlerService.handleError<{token: string, userId: Pick<User, "id">}>("login"))
     );
   }
+  
+    // auth.service.ts
+  saveDetails(userDetails: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/save-details`, userDetails, this.httpOptions).pipe(
+      first(),
+      catchError(this.errorHandlerService.handleError<any>("saveDetails"))
+    );
+  }
 
 }
