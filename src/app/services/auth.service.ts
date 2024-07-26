@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "https://planeta-api-nodejs.onrender.com/auth";
+  // private url = "https://planeta-api-nodejs.onrender.com/auth";
   // private url = "http://localhost:3000/auth";
+  private url = "https://planeta-api-nodejs.vercel.app/auth";
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId!: Pick<User, "id">;
