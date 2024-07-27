@@ -66,4 +66,19 @@ export class AuthService {
     );
   }
 
+  saveUserPJDetails(userDetailsPj: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/save-user-pj-details`, userDetailsPj, this.httpOptions).pipe(
+      first(),
+      catchError(this.errorHandlerService.handleError<any>("saveUserPJDetails"))
+    );
+  }
+  
+  getUserPJDetails(userId: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/user-pj/${userId}`).pipe(
+      first(),
+      catchError(this.errorHandlerService.handleError<any>("getUserPJDetails"))
+    );
+  }
+  
+
 }

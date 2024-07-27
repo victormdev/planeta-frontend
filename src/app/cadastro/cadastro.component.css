@@ -1,0 +1,9 @@
+.floating-alert {
+    position: fixed;
+    top: 0;
+    margin-top: 15px;
+    left: 5;
+    margin-left: 47%;
+    width: 100%;
+    z-index: 100000000; /* Certifique-se de que o z-index seja alto o suficiente para ficar acima de outros elementos */
+}

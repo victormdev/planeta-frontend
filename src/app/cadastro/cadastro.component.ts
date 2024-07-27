@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./cadastro.component.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-svg.css']
 })
 export class CadastroComponent {
+  userUpdated = false;
   constructor(private authService: AuthService) {}
   ngOnInit(){
     this.userId = this.authService.getUserId();
@@ -43,10 +44,40 @@ export class CadastroComponent {
         console.error(error);
       }
     );
+    this.authService.getUserPJDetails(this.userId).subscribe(
+      userDetailsPj => {
+        this.nomeCompleto = userDetailsPj.nome_completo;
+        this.rg = userDetailsPj.rg;
+        this.cpf = userDetailsPj.cpf;
+        this.estadoCivil = userDetailsPj.estado_civil;
+        this.dataNascimento = userDetailsPj.data_nascimento;
+        this.rua = userDetailsPj.rua;
+        this.cidade = userDetailsPj.cidade;
+        this.estado = userDetailsPj.estado;
+        this.pais = userDetailsPj.pais;
+        this.cep = userDetailsPj.cep;
+        this.celular1 = userDetailsPj.celular_1;
+        this.celular2 = userDetailsPj.celular_2;
+        this.telefone = userDetailsPj.telefone;
+        this.email = userDetailsPj.email;
+        this.instagram = userDetailsPj.instagram;
+        this.facebook = userDetailsPj.facebook;
+        this.tiktok = userDetailsPj.tiktok;
+        this.kwai = userDetailsPj.kwai;
+        this.site = userDetailsPj.site;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
   selectedTab = 1;
 
   userId!: string;
+  estadoCivil!: string;
+  tiktok!: string;
+  kwai!: string;
+  dataNascimento!: Date;
   pessoaJuridica!: string;
   razaoSocial!: string;
   cnpj!: string;
@@ -66,6 +97,30 @@ export class CadastroComponent {
   instagram!: string;
   facebook!: string;
   site!: string;
+
+  pjestadoCivil!: string;
+  pjtiktok!: string;
+  pjkwai!: string;
+  pjdataNascimento!: Date;
+  pjpessoaJuridica!: string;
+  pjrazaoSocial!: string;
+  pjcnpj!: string;
+  pjinscricaoMunicipal!: string;
+  pjnomeCompleto!: string;
+  pjrg!: string;
+  pjcpf!: string;
+  pjrua!: string;
+  pjcidade!: string;
+  pjestado!: string;
+  pjpais!: string;
+  pjcep!: string;
+  pjcelular1!: string;
+  pjcelular2!: string;
+  pjtelefone!: string;
+  pjemail!: string;
+  pjinstagram!: string;
+  pjfacebook!: string;
+  pjsite!: string;
 
 
   selecttab(tabNumber: number) {
@@ -130,6 +185,47 @@ export class CadastroComponent {
     this.authService.saveDetails(userDetails).subscribe(
       response => {
         console.log(response);
+        this.userUpdated = true;
+        setTimeout(() => {
+          this.userUpdated = false;
+      }, 3000);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+  
+  onSaveUserPJDetails() {
+    const userDetailsPj = {
+      user_id: this.userId ?? null,
+      nome_completo: this.pjnomeCompleto ?? null,
+      rg: this.pjrg ?? null,
+      cpf: this.pjcpf ?? null,
+      estado_civil: this.pjestadoCivil ?? null,
+      data_nascimento: this.pjdataNascimento ?? null,
+      rua: this.pjrua ?? null,
+      cidade: this.pjcidade ?? null,
+      estado: this.pjestado ?? null,
+      pais: this.pjpais ?? null,
+      cep: this.pjcep ?? null,
+      celular_1: this.pjcelular1 ?? null,
+      celular_2: this.pjcelular2 ?? null,
+      telefone: this.pjtelefone ?? null,
+      email: this.pjemail ?? null,
+      instagram: this.pjinstagram ?? null,
+      facebook: this.pjfacebook ?? null,
+      tiktok: this.pjtiktok ?? null,
+      kwai: this.pjkwai ?? null
+    };
+    console.log(userDetailsPj);
+    this.authService.saveUserPJDetails(userDetailsPj).subscribe(
+      response => {
+        console.log(response);
+        this.userUpdated = true;
+        setTimeout(() => {
+          this.userUpdated = false;
+        }, 3000);
       },
       error => {
         console.error(error);

@@ -231,9 +231,9 @@
                     
                     <form  (ngSubmit)="onSaveDetails()">
                       <div class="row">
-                          <div id="alertasucesso" class="alert alert-success" role="alert" style="display: none;">
-                              <strong>sucesso!</strong> seus dados foram salvos!
-                          </div>
+                        <div class="alert alert-success floating-alert" role="alert" *ngIf="userUpdated">
+                            Cadastro realizado com sucesso!<br><a href=""></a>
+                       </div>
                           <div class="col-12 col-md-6">
                                   <label>Pessoa Jurídica *</label>
                                   <div class="mb-3">
@@ -379,15 +379,20 @@
           <div class="col-12 tab-content" [class.active]="isSelected(2)">
               <div class="card mb-2">
                   <div class="card-body">
+                    <form (ngSubmit)="onSaveUserPJDetails()">
+                        
+                        <div class="alert alert-success floating-alert" role="alert" *ngIf="userUpdated">
+                            Cadastro realizado com sucesso!<br><a href=""></a>
+                       </div>
                       <div class="row">
                           <div class="col-12 col-md-4">
                                   <label>Nome Completo *</label>
                                   <div class="mb-3">
-                                      <input type="text" class="form-control" placeholder="Digite o nome completo" aria-label="email" aria-describedby="email-addon" required>
+                                      <input name="pjnomeCompleto" [(ngModel)]="pjnomeCompleto" type="text" class="form-control" placeholder="Digite o nome completo" aria-label="email" aria-describedby="email-addon" required>
                                   </div>
                                   <label>Estado Civil *</label>
                                   <div class="form-group">
-                                      <select class="form-control">
+                                      <select name="pjestadoCivil" [(ngModel)]="pjestadoCivil" class="form-control">
                                           <option value="" selected></option>
                                           <option value="">Casado(a)</option>
                                           <option value="">Viúvo(a)</option>
@@ -400,72 +405,72 @@
                           <div class="col-12 col-md-4 mb-3">
                               <label>RG *</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="13" oninput="formatarRG(this)" class="form-control" placeholder="Digite o RG" aria-label="email" aria-describedby="email-addon" required>
+                                  <input type="text" name="pjrg" [(ngModel)]="pjrg" maxlength="13" oninput="formatarRG(this)" class="form-control" placeholder="Digite o RG" aria-label="email" aria-describedby="email-addon" required>
                               </div>
                               <label>Data de Nascimento *</label>
                               <div class="mb-3">
-                                  <input type="date" class="form-control" placeholder="" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="date" name="pjdataNascimento" [(ngModel)]="pjdataNascimento"  class="form-control" placeholder="" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4 mb-3">
                               <label>CPF *</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="14" class="form-control" oninput="formatarCpF(this)" placeholder="Digite o CPF" aria-label="email" aria-describedby="email-addon" required>
+                                  <input name="pjcpf" [(ngModel)]="pjcpf"  type="text" maxlength="14" class="form-control" oninput="formatarCpF(this)" placeholder="Digite o CPF" aria-label="email" aria-describedby="email-addon" required>
                               </div>
                           </div>
 
                           <div class="col-12 col-md-7">
                               <label>Rua/Logradouro *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite a sua rua/logradouro" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjrua" [(ngModel)]="pjrua"  class="form-control" placeholder="Digite a sua rua/logradouro" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-5">
                               <label>Cidade *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite a cidade" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjcidade" [(ngModel)]="pjcidade"  class="form-control" placeholder="Digite a cidade" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>Estado *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite o estado" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjestado" [(ngModel)]="pjestado"  class="form-control" placeholder="Digite o estado" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>País *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite o país" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjpais" [(ngModel)]="pjpais"  class="form-control" placeholder="Digite o país" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>CEP *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatarCEp(this)" maxlength="10" class="form-control" placeholder="Digite o CEP" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjcep" [(ngModel)]="pjcep"  oninput="formatarCEp(this)" maxlength="10" class="form-control" placeholder="Digite o CEP" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 1 *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjcelular1" [(ngModel)]="pjcelular1"  oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 2 *</label>
                               <div class="mb-3">
-                                  <input type="text" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjcelular2" [(ngModel)]="pjcelular2" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Telefone *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjtelefone" [(ngModel)]="pjtelefone"  class="form-control" placeholder="Digite o número" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-6">
                               <label>E-mail *</label>
                               <div class="mb-3">
-                                  <input type="email" class="form-control" placeholder="Digite o e-mail" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="email" name="pjemail" [(ngModel)]="pjemail" class="form-control" placeholder="Digite o e-mail" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
@@ -480,7 +485,7 @@
                                   <!-- <img style="width: 10% !important; height: 10% !important;" src="assets/img/small-logos/instagram.png" class="avatar avatar-sm rounded-circle me-0"> -->
                                   &nbsp;&nbsp;instagram</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pjinstagram" [(ngModel)]="pjinstagram"  class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
@@ -488,7 +493,7 @@
                                   <img style="width: 6% !important; height: 6% !important;" src="../assets/img/small-logos/facebook.png" class="avatar avatar-sm rounded-circle me-0">
                                   &nbsp;&nbsp;Facebook</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input name="pjfacebook" [(ngModel)]="pjfacebook" type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
@@ -496,7 +501,7 @@
                                   <img style="width: 10% !important; height: 10% !important;" src="../assets/img/small-logos/tiktok.png" class="avatar avatar-sm rounded-circle me-0">
                                   &nbsp;&nbsp;TikTok</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input name="pjtiktok" [(ngModel)]="pjtiktok" type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
@@ -504,15 +509,15 @@
                                   <img style="width: 10% !important; height: 10% !important;" src="../assets/img/small-logos/kwai.png" class="avatar avatar-sm rounded-circle me-0">
                                   &nbsp;&nbsp;Kwai</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input name="pjkwai" [(ngModel)]="pjkwai" type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-4">
-                              <button type="button" ng-disabled="cadastroFisicoform.$invalid" class="btn bg-gradient-info w-100 mt-7 mb-0">salvar</button>
+                              <button type="submit" class="btn bg-gradient-info w-100 mt-7 mb-0">salvar</button>
 
                           </div>
                       </div>
-
+                    </form>
                   </div>
               </div>
           </div>
