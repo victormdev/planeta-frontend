@@ -228,30 +228,30 @@
           <div class="col-12 tab-content" [class.active]="isSelected(1)">
               <div class="card mb-2">
                   <div class="card-body">
+                    
+                    <form  (ngSubmit)="onSaveDetails()">
                       <div class="row">
                           <div id="alertasucesso" class="alert alert-success" role="alert" style="display: none;">
                               <strong>sucesso!</strong> seus dados foram salvos!
                           </div>
                           <div class="col-12 col-md-6">
-                              <form>
                                   <label>Pessoa Jurídica *</label>
                                   <div class="mb-3">
-                                      <input type="text" id="juridicopessoajuridica" class="form-control" placeholder="Digite a Pessoa Jurídica" required>
+                                      <input type="text" [(ngModel)]="pessoaJuridica" name="pessoaJuridica" id="juridicopessoajuridica" class="form-control" placeholder="Digite a Pessoa Jurídica" required>
                                   </div>
                                   <label>CNPJ *</label>
                                   <div class="mb-3">
-                                      <input type="text" id="juridicocnpj" class="form-control" oninput="formatarCNpJ(this)" maxlength="18" placeholder="Digite o CNPJ" aria-label="password" aria-describedby="password-addon" required>
+                                      <input type="text" id="juridicocnpj" [(ngModel)]="cnpj" name="cnpj" class="form-control" oninput="formatarCNpJ(this)" maxlength="18" placeholder="Digite o CNPJ" aria-label="password" aria-describedby="password-addon" required>
                                   </div>
-                              </form>
                           </div>
                           <div class="col-12 col-md-6 mb-3">
                               <label>Razão Social *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicorazao" class="form-control" placeholder="Digite a Razão Social" aria-label="email" aria-describedby="email-addon" required>
+                                  <input type="text" [(ngModel)]="razaoSocial" name="razaoSocial" id="juridicorazao" class="form-control" placeholder="Digite a Razão Social" aria-label="email" aria-describedby="email-addon" required>
                               </div>
                               <label>Inscrição Municipal *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicoinscricao" class="form-control" placeholder="Digite a sua Inscrição Municipal" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="inscricaoMunicipal" [(ngModel)]="inscricaoMunicipal" id="juridicoinscricao" class="form-control" placeholder="Digite a sua Inscrição Municipal" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-4"></div>
@@ -262,75 +262,75 @@
                           <div class="col-12 col-md-6">
                               <label>Nome Completo *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridiconome" class="form-control" placeholder="Nome completo do representante" aria-label="email" aria-describedby="email-addon" required>
+                                  <input type="text" name="nomeCompleto" [(ngModel)]="nomeCompleto" id="juridiconome" class="form-control" placeholder="Nome completo do representante" aria-label="email" aria-describedby="email-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-3">
                               <label>RG *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicorg" class="form-control" oninput="formatarRG(this)" maxlength="13" placeholder="RG do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="rg" [(ngModel)]="rg" id="juridicorg" class="form-control" oninput="formatarRG(this)" maxlength="13" placeholder="RG do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
                           <div class="col-12 col-md-3">
                               <label>CPF *</label>
                               <div class="mb-3">
-                                  <input id="juridicocpf" type="text" maxlength="14" class="form-control" placeholder="CPF do representante" oninput="formatarCPF(this)" ui-mask="999.999.999-99" aria-label="password" aria-describedby="password-addon" required>
+                                  <input id="juridicocpf" name="cpf" [(ngModel)]="cpf" type="text" maxlength="14" class="form-control" placeholder="CPF do representante" oninput="formatarCPF(this)" ui-mask="999.999.999-99" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
                           <div class="col-12 col-md-7">
                               <label>Rua/Logradouro *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicorua" class="form-control" placeholder="Digite a rua e/ou logradouro" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="rua" [(ngModel)]="rua" id="juridicorua" class="form-control" placeholder="Digite a rua e/ou logradouro" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-5">
                               <label>Cidade *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicocidade" class="form-control" placeholder="Cidade do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="cidade" [(ngModel)]="cidade" id="juridicocidade" class="form-control" placeholder="Cidade do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>Estado *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicoestado" class="form-control" placeholder="Estado do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="estado" [(ngModel)]="estado" id="juridicoestado" class="form-control" placeholder="Estado do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>País *</label>
                               <div class="mb-3">
-                                  <input type="text" id="juridicopais" class="form-control" placeholder="País do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="pais" [(ngModel)]="pais" id="juridicopais" class="form-control" placeholder="País do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
                               <label>CEP *</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" id="juridicocep" placeholder="CEP do representante" oninput="formatarCEp(this)" maxlength="10" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="cep" [(ngModel)]="cep" class="form-control" id="juridicocep" placeholder="CEP do representante" oninput="formatarCEp(this)" maxlength="10" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 1 *</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="15" id="juridicocelular1" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="celular1" [(ngModel)]="celular1" maxlength="15" id="juridicocelular1" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Celular 2</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="15" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="celular2" [(ngModel)]="celular2" maxlength="15" oninput="formatartelefone(this)" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-2">
                               <label>Telefone</label>
                               <div class="mb-3">
-                                  <input type="text" maxlength="14" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="telefone" [(ngModel)]="telefone" maxlength="14" class="form-control" placeholder="Digite o n&uacute;mero" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-6">
                               <label>E-mail *</label>
                               <div class="mb-3">
-                                  <input type="email" class="form-control" placeholder="E-mail do representante" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="email" name="email" [(ngModel)]="email" class="form-control" placeholder="E-mail do representante" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
@@ -345,7 +345,7 @@
                                   <!-- <img style="width: 10% !important; height: 10% !important;" src="assets/img/small-logos/instagram.png" class="avatar avatar-sm rounded-circle me-0"> -->
                                   &nbsp;&nbsp;instagram</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="instagram" [(ngModel)]="instagram" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-12 col-md-4">
@@ -353,25 +353,25 @@
                                   <img style="width: 6% !important; height: 6% !important;" src="../assets/img/small-logos/facebook.png" class="avatar avatar-sm rounded-circle me-0">
                                   &nbsp;&nbsp;Facebook</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="facebook" [(ngModel)]="facebook" class="form-control" placeholder="@ ou link" value="@" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
 
                           <div class="col-12 col-md-4">
                               <label>site</label>
                               <div class="mb-3">
-                                  <input type="text" class="form-control" placeholder="https://seusite.com" aria-label="password" aria-describedby="password-addon" required>
+                                  <input type="text" name="site" [(ngModel)]="site" class="form-control" placeholder="https://seusite.com" aria-label="password" aria-describedby="password-addon" required>
                               </div>
                           </div>
                           <div class="col-4"></div>
                           <div class="col-4">
-                              <button type="button" onclick="salvarform()" ng-disabled="cadastroform.$invalid" class="btn bg-gradient-info w-100 mt-7 mb-0">salvar</button>
+                              <button type="submit" class="btn bg-gradient-info w-100 mt-7 mb-0">salvar</button>
 
                           </div>
                           <div class="col-4"></div>
 
                       </div>
-
+                        </form>
                   </div>
               </div>
           </div>
@@ -381,7 +381,6 @@
                   <div class="card-body">
                       <div class="row">
                           <div class="col-12 col-md-4">
-                              <form name="cadastroFisicoform">
                                   <label>Nome Completo *</label>
                                   <div class="mb-3">
                                       <input type="text" class="form-control" placeholder="Digite o nome completo" aria-label="email" aria-describedby="email-addon" required>
@@ -397,7 +396,6 @@
                                           <option value="">Solteiro(a)</option>
                                       </select>
                                   </div>
-                              </form>
                           </div>
                           <div class="col-12 col-md-4 mb-3">
                               <label>RG *</label>
