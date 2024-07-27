@@ -31,7 +31,8 @@
             ],
             "scripts": [
               "src/assets/js/soft-ui-dashboard.js",
-              "src/assets/js/core/popper.min.js"
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/core/plugins/chartjs.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,

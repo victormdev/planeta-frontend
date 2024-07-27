@@ -17,6 +17,32 @@ export class CadastroComponent {
   ngOnInit(){
     this.userId = this.authService.getUserId();
     console.log(this.userId); // Verifique se o userId está correto
+    this.authService.getUserDetails(this.userId).subscribe(
+      userDetails => {
+        this.pessoaJuridica = userDetails.pessoa_juridica;
+        this.razaoSocial = userDetails.razao_social;
+        this.cnpj = userDetails.cnpj;
+        this.inscricaoMunicipal = userDetails.inscricao_municipal;
+        this.nomeCompleto = userDetails.nome_completo;
+        this.rg = userDetails.rg;
+        this.cpf = userDetails.cpf;
+        this.rua = userDetails.rua;
+        this.cidade = userDetails.cidade;
+        this.estado = userDetails.estado;
+        this.pais = userDetails.pais;
+        this.cep = userDetails.cep;
+        this.celular1 = userDetails.celular_1;
+        this.celular2 = userDetails.celular_2;
+        this.telefone = userDetails.telefone;
+        this.email = userDetails.email;
+        this.instagram = userDetails.instagram;
+        this.facebook = userDetails.facebook;
+        this.site = userDetails.site;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
   selectedTab = 1;
 
