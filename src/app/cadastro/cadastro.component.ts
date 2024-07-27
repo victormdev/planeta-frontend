@@ -14,9 +14,13 @@ import { AuthService } from '../services/auth.service';
 })
 export class CadastroComponent {
   constructor(private authService: AuthService) {}
+  ngOnInit(){
+    this.userId = this.authService.getUserId();
+    console.log(this.userId); // Verifique se o userId está correto
+  }
   selectedTab = 1;
 
-  userId!: number;
+  userId!: string;
   pessoaJuridica!: string;
   razaoSocial!: string;
   cnpj!: string;
