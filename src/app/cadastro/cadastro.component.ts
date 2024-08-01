@@ -16,7 +16,7 @@ export class CadastroComponent {
   userUpdated = false;
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(){
-    this.userId = this.authService.getUserId();
+    this.userId = localStorage.getItem("userId") || '';
     console.log(this.userId); // Verifique se o userId está correto
     this.authService.getUserDetails(this.userId).subscribe(
       userDetails => {

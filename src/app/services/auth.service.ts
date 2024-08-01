@@ -43,7 +43,8 @@ export class AuthService {
         this.userId = tokenObject.userId;
         this.setUserId(tokenObject.userId);
         localStorage.setItem("token", tokenObject.token);
-        localStorage.setItem("angularLogin", tokenObject.token)
+        localStorage.setItem("angularLogin", tokenObject.token);
+        localStorage.setItem("userId", tokenObject.userId);
         this.isUserLoggedIn$.next(true);
         this.router.navigate(["/painel"]);
       }),
