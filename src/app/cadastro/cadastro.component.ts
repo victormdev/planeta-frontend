@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 
@@ -14,7 +14,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class CadastroComponent {
   userUpdated = false;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(){
     this.userId = this.authService.getUserId();
     console.log(this.userId); // Verifique se o userId está correto
@@ -130,7 +130,10 @@ export class CadastroComponent {
   isSelected(tabNumber: number) {
     return this.selectedTab === tabNumber;
   }
-
+  logout() {
+    localStorage.removeItem('angularLogin'); // Remove o token do localStorage
+    this.router.navigateByUrl('/login'); // Redireciona para a tela de login
+  }
   channelTypes = [
     "",
     "Instagram",

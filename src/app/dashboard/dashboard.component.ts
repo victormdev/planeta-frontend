@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive, Router } from '@angular/router';
 
 
 @Component({
@@ -10,5 +10,9 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
   styleUrls: ['./dashboard.component.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-icons.css', '../../assets/css/nucleo-svg.css']
 })
 export class DashboardComponent {
-
+  constructor(private router: Router){}
+  logout() {
+    localStorage.removeItem('angularLogin'); // Remove o token do localStorage
+    this.router.navigateByUrl('/login'); // Redireciona para a tela de login
+  }
 }

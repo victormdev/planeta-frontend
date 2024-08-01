@@ -41,8 +41,9 @@ export class AuthService {
       first(),
       tap((tokenObject: {token: string, userId: string}) => {
         this.userId = tokenObject.userId;
-        this.setUserId(tokenObject.userId); // Ajuste aqui
+        this.setUserId(tokenObject.userId);
         localStorage.setItem("token", tokenObject.token);
+        localStorage.setItem("angularLogin", tokenObject.token)
         this.isUserLoggedIn$.next(true);
         this.router.navigate(["/painel"]);
       }),

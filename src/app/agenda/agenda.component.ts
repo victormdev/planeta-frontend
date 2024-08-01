@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-agenda',
@@ -9,5 +9,9 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
   styleUrl: './agenda.component.css'
 })
 export class AgendaComponent {
-
+  constructor(private router: Router){}
+  logout() {
+    localStorage.removeItem('angularLogin'); // Remove o token do localStorage
+    this.router.navigateByUrl('/login'); // Redireciona para a tela de login
+  }
 }
