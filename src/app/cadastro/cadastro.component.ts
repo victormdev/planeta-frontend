@@ -46,25 +46,25 @@ export class CadastroComponent {
     );
     this.authService.getUserPJDetails(this.userId).subscribe(
       userDetailsPj => {
-        this.nomeCompleto = userDetailsPj.nome_completo;
-        this.rg = userDetailsPj.rg;
-        this.cpf = userDetailsPj.cpf;
-        this.estadoCivil = userDetailsPj.estado_civil;
-        this.dataNascimento = userDetailsPj.data_nascimento;
-        this.rua = userDetailsPj.rua;
-        this.cidade = userDetailsPj.cidade;
-        this.estado = userDetailsPj.estado;
-        this.pais = userDetailsPj.pais;
-        this.cep = userDetailsPj.cep;
-        this.celular1 = userDetailsPj.celular_1;
-        this.celular2 = userDetailsPj.celular_2;
-        this.telefone = userDetailsPj.telefone;
-        this.email = userDetailsPj.email;
-        this.instagram = userDetailsPj.instagram;
-        this.facebook = userDetailsPj.facebook;
-        this.tiktok = userDetailsPj.tiktok;
-        this.kwai = userDetailsPj.kwai;
-        this.site = userDetailsPj.site;
+        this.pjnomeCompleto = userDetailsPj.nome_completo;
+        this.pjrg = userDetailsPj.rg;
+        this.pjcpf = userDetailsPj.cpf;
+        this.pjestadoCivil = userDetailsPj.estado_civil;
+        this.pjdataNascimento = userDetailsPj.data_nascimento;
+        this.pjrua = userDetailsPj.rua;
+        this.pjcidade = userDetailsPj.cidade;
+        this.pjestado = userDetailsPj.estado;
+        this.pjpais = userDetailsPj.pais;
+        this.pjcep = userDetailsPj.cep;
+        this.pjcelular1 = userDetailsPj.celular_1;
+        this.pjcelular2 = userDetailsPj.celular_2;
+        this.pjtelefone = userDetailsPj.telefone;
+        this.pjemail = userDetailsPj.email;
+        this.pjinstagram = userDetailsPj.instagram;
+        this.pjfacebook = userDetailsPj.facebook;
+        this.pjtiktok = userDetailsPj.tiktok;
+        this.pjkwai = userDetailsPj.kwai;
+        this.pjsite = userDetailsPj.site;
       },
       error => {
         console.error(error);
@@ -121,7 +121,6 @@ export class CadastroComponent {
   pjinstagram!: string;
   pjfacebook!: string;
   pjsite!: string;
-
 
   selecttab(tabNumber: number) {
     this.selectedTab = tabNumber;
@@ -221,17 +220,17 @@ export class CadastroComponent {
       tiktok: this.pjtiktok ?? null,
       kwai: this.pjkwai ?? null
     };
-    console.log(userDetailsPj);
+    console.log('Sending user details:', userDetailsPj);
     this.authService.saveUserPJDetails(userDetailsPj).subscribe(
       response => {
-        console.log(response);
+        console.log('Response from API:', response);
         this.userUpdated = true;
         setTimeout(() => {
           this.userUpdated = false;
         }, 3000);
       },
       error => {
-        console.error(error);
+        console.error('Error from API:', error);
       }
     );
   }
