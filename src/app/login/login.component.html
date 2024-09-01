@@ -68,11 +68,14 @@
                       <input type="email" class="form-control" placeholder="E-mail" id="usuario" ng-model="username" aria-label="Email" formControlName="email" required>
                     </div>
                     <label>Senha</label>
-                    <div class="mb-3">
-                      <input type="password" class="form-control" placeholder="Senha" id="senha" aria-label="Password" formControlName="password"  required>
+                    <div class="input-group mb-3">
+                      <div class="input-group input-group-alternative mb-4">
+                        <input [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="Senha" aria-label="Password" formControlName="password"  required>
+                        <span style="position: absolute; margin-left: 68%; margin-top: 0;" class="btn mb-0" (click)="togglePasswordVisibility()" id="button-addon2">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</span>
+                      </div>
                     </div>
                     <div class="text-center">
-                      <a><button type="submit" id="entrar" class="btn bg-gradient-info w-100 mt-4 mb-0" [disabled]="!loginForm.valid">Entrar</button></a>
+                      <a><button type="submit" id="entrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Entrar</button></a>
                     </div>
                   </form>
                 </div>

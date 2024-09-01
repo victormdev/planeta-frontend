@@ -15,6 +15,11 @@ export class LoginComponent {
   errorMessage: string | null = null;
   invalidCredentials = false;
   loginForm!: FormGroup;
+  showPassword: boolean = false;
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 
   constructor(private authService: AuthService){}
 
